@@ -131,16 +131,22 @@ class UsersController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The User could not be saved.', true), 'flash/error');
 			}
+		} else {
+			$this->data['User']['id'] = $this->Authsome->get('id');
+			$this->data['User']['email'] = $this->Authsome->get('email');
 		}
 		$this->render('edit');
 	}
 
 	function edit($id = null) {
-		if (!$id && empty($this->data)) {
-			$this->Session->setFlash(__('Invalid User', true), 'flash/error');
-			$this->redirect(array('action' => 'index'));
-		}
+		$id = $this->Authsome->get('id');
 		if (!empty($this->data)) {
+			// cleanup the crazy data structure which gets us the key/value pairs as both editable
+			foreach ($this->data['MetaField'] as $i => $node) {
+				if (!empty($node['field'])) {
+					$this->data['User'][($node['field'])] = trim($node['value']);
+				}
+			}
 			if ($this->User->save($this->data, array('callback' => 'edit'))) {
 				$this->Session->setFlash(__('The User has been saved', true), 'flash/success');
 				$this->redirect(array('action' => 'index'));
