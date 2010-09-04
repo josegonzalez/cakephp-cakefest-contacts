@@ -1,5 +1,3 @@
-<h2>You put the lime in the coconut and just mix it all up!</h2>
-
 <p>Login to share your contact information with others at the cakefest, and get their contact information.</p>
 <?php
 echo $this->Form->create('User',array('action'=>'login'));

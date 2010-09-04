@@ -1,0 +1,3 @@
+[submodule "plugins/authsome"]
+	path = plugins/authsome
+	url = git://github.com/felixge/cakephp-authsome.git
