@@ -5,9 +5,26 @@ echo $this->Form->input('email');
 echo $this->Form->input('password',array('type'=>'password'));
 echo $this->Form->input('password_confirm',array('type'=>'password'));
 
-echo $this->element('self_field');
-
+foreach (array_diff_key($this->data['User'],array('')) as $field => $value) {
+	echo $this->element('self_field',array(
+		'field' => $field,
+		'value' => $value,
+		));
+}
+for ($i=0;$i<30;$i++) {
+	echo $this->element('self_field',array());
+}
+$html->scriptBlock('
+	$("div.meta").each(function(i,div) {
+		$(div).find("input").bind("change",function(e) {
+			if ($(this).parents("div").find("input:first").val()=="") {
+				$(this).parents("div").hide();
+			} else {
+				$(this).parents("div").hide();
+			}
+		});
+	});
+	', array('inline' => false));
 
 echo $this->Form->end('Save');
 ?>
-<p style="font-style:italic;color:grey;">(* us the password at the hotel)</p>

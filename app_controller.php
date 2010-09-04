@@ -31,7 +31,7 @@
  * @subpackage    cake.app
  */
 class AppController extends Controller {
-	
+	var $helpers = array('Js' => array('Jquery'));
     public $components = array(
         'Authsome.Authsome' => array(
             'model' => 'User'

@@ -27,11 +27,10 @@
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
 		echo $this->Html->css('cake.generic');
-
 		echo $scripts_for_layout;
 	?>
+	<script src="http://cdn.jquerytools.org/1.2.4/full/jquery.tools.min.js"></script>
 </head>
 <body>
 	<div id="container">
@@ -54,6 +53,9 @@
 			?>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<?php 
+	$this->Js->writeBuffer();
+	echo $this->element('sql_dump'); 
+	?>
 </body>
 </html>
