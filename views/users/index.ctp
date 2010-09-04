@@ -7,10 +7,11 @@ foreach ($users as $user) {
 		'action' => 'vcs',
 		$user['User']['id']
 		));
-	echo $this->Html->link("vcs",array(
+	echo $this->Html->link("edit",array(
 		'action' => 'edit',
 		$user['User']['id']
 		));
 }
 
 ?>
+<p style="font-style:italic;color:grey;">(* use the password for the hotel wifi)</p>
