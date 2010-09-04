@@ -8,22 +8,22 @@ class UsersController extends AppController {
 		if (empty($this->data)) {
 			return;
 		}
-
 		$user = Authsome::login($this->data['User']);
-
 		if (!$user) {
 			$this->Session->setFlash(__('Unknown user or Wrong Password', true), 'flash/error');
 			return;
 		}
-
 		$remember = (!empty($this->data['User']['remember']));
 		if ($remember) {
 			Authsome::persist('2 weeks');
 		}
-
 		if ($user) {
 			$this->Session->setFlash(__('You have been logged in', true), 'flash/success');
-			$this->redirect('/');
+			if (!empty($user['User']['id'])) {
+				$this->redirect('/users/edit/'.$user['User']['id']);
+			} else {
+				$this->redirect('/users/add');
+			}
 		}
 	}
 
@@ -132,6 +132,7 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The User could not be saved.', true), 'flash/error');
 			}
 		}
+		$this->render('edit');
 	}
 
 	function edit($id = null) {

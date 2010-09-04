@@ -1,8 +1,16 @@
-<p>Login to share your contact information with others at the cakefest, and get their contact information.</p>
 <?php
-echo $this->Form->create('User',array('action'=>'login'));
-echo $this->Form->input('email');
-echo $this->Form->input('password',array('type'=>'password'));
-echo $this->Form->end('Login');
+
+foreach ($users as $user) {
+	
+	echo "{$user['User']['username']} {$user['User']['email']}";
+	echo $this->Html->link("vcs",array(
+		'action' => 'vcs',
+		$user['User']['id']
+		));
+	echo $this->Html->link("vcs",array(
+		'action' => 'edit',
+		$user['User']['id']
+		));
+}
+
 ?>
-<p style="font-style:italic;color:grey;">(* us the password at the hotel)</p>
