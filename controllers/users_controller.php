@@ -78,7 +78,11 @@ class UsersController extends AppController {
 					$this->data['User'][($node['field'])] = trim($node['value']);
 				}
 			}
+			unset($this->data['MetaField']);
 			if ($this->User->save($this->data, array('callback' => 'edit'))) {
+				$user = $this->User->find('first', array('conditions' => array('User.id' => $this->User->id)));
+				$user['User']['loginType'] = 'credentials';
+				$this->Session->write('User',$user);
 				$this->Session->setFlash(__('The User has been saved', true), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -90,7 +94,7 @@ class UsersController extends AppController {
 		}
 		if (empty($this->data)) {
 			$this->Session->setFlash(__('Invalid User', true), 'flash/error');
-			$this->redirect(array('action' => 'index'));
+			//$this->redirect(array('action' => 'index'));
 		}
 	}
 
