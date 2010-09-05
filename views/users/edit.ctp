@@ -9,7 +9,7 @@ echo $this->Form->input('password_confirm',array('type'=>'password'));
 foreach (array_diff_key((array)$this->data['User'],array(
 	'id' => 0, 'email' => 0, 'password' => 0, 'username' => 0,
 	)) + array(
-	'phone' => '', 'twitter' => '', 
+	'phone' => '', 'twitter' => '', 'aim' => '',  'yim' => '',  'gtalk' => '', 'skype' => '',
 	) as $field => $value) {
 	if (!in_array($field,array('created','modified'))) {
 		echo $this->element('self_field',array(
@@ -18,15 +18,18 @@ foreach (array_diff_key((array)$this->data['User'],array(
 			));
 	}
 }
+for ($i=0;$i<30;$i++) {
+	echo $this->element('self_field',array());
+}
 $html->scriptBlock('
 	$("div.meta").each(function(i,div) {
 		$(div).find("input").bind("change",function(e) {
-			if ($(this).parent().find("input:first").val()=="" && 
-				$(this).parent().prev().find("input:first").val()=="") {
-				$(this).parent().hide();
+			if ($(this).parents("div:first").find("input:first").val()=="" && 
+				$(this).parents("div:first").prev().find("input:first").val()=="") {
+				$(this).parents("div:first").hide();
 			} else {
-				$(this).parent().show();
-				$(this).parent().next().find("input:first").trigger("change");
+				$(this).parents("div:first").show();
+				$(this).parents("div:first").next().find("input:first").trigger("change");
 			}
 		});
 		$(div).find("input:first").trigger("change");
