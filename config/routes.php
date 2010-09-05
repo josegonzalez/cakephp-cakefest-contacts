@@ -21,7 +21,7 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-	Router::parseExtensions('json', 'xml');
+	Router::parseExtensions('json', 'vcf', 'xml');
 
 /**
  * Here, we are connecting '/' (base path) to controller called 'Pages',
@@ -29,10 +29,11 @@
  * to use (in this case, /app/views/pages/home.ctp)...
  */
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
+	Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
+	Router::connect('/profile', array('controller' => 'users', 'action' => 'edit'));
 
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-
-        Router::parseExtensions('vcf');

@@ -12,8 +12,9 @@
 	overflow: hidden;
 }
 #header h1 {
-	float: left;
-	margin: 20px 0;
+	margin: 10px 2px 10px 2px;
+	color: #DEAF75;
+	text-shadow: 0px 1px 5px #000;
 }
 #header img {
 	float: right;
@@ -35,4 +36,5 @@
 #footer {
 	margin-top: 10px;
 	color: #ffffff;
+	text-align: center;
 }
