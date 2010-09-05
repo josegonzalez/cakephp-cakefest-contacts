@@ -4,7 +4,7 @@
 #
 # Host: localhost (MySQL 5.1.49)
 # Database: cakefest_contacts
-# Generation Time: 2010-09-05 01:45:46 -0500
+# Generation Time: 2010-09-05 03:08:13 -0500
 # ************************************************************
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -44,7 +44,7 @@ DROP TABLE IF EXISTS `meta_fields`;
 
 CREATE TABLE `meta_fields` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `model_id` int(11) DEFAULT NULL,
+  `model_id` varchar(36) COLLATE utf8_bin DEFAULT NULL,
   `model` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `key` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `value` text COLLATE utf8_bin,
@@ -64,6 +64,7 @@ CREATE TABLE `users` (
   `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

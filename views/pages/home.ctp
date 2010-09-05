@@ -1,6 +1,6 @@
-<h2>You put the lime in the coconut and just mix it all up!</h2>
+<h2>Put de lime in de coconut, and drink 'em both up</h2>
 
-<p>Login to share your contact information with others at the cakefest, and get their contact information.</p>
+<p>Login to share your contact information with others at the CakeFest, and get their contact information.</p>
 <?php
 echo $this->Form->create('User',array('action'=>'login'));
 echo $this->Form->input('email');
