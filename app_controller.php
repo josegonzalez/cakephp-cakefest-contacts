@@ -38,10 +38,11 @@ class AppController extends Controller {
 	);
 
 	var $components = array(
-		'DebugKit.Toolbar',
-		'Session',
 		'Authsome.Authsome' => array(
 			'model' => 'User'
-		)
+		),
+		'DebugKit.Toolbar',
+		'Session',
+		'RequestHandler',
 	);
 }
