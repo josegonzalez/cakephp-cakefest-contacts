@@ -80,7 +80,10 @@ class UsersController extends AppController {
 			unset($this->data['MetaField']);
 			unset($this->data['User']['password_confirm']);
 			if ($this->User->save($this->data, array('callback' => 'edit'))) {
-				$user = $this->User->find('first', array('conditions' => array('User.id' => $this->User->id)));
+				$user = $this->User->find('first', array(
+					'conditions' => array('User.id' => $this->User->id),
+					'contain' => array('MetaField')
+				));
 				$user['User']['loginType'] = 'credentials';
 				$this->Session->write('User',$user);
 				$this->Session->setFlash(__('The User has been saved', true), 'flash/success');
@@ -90,28 +93,14 @@ class UsersController extends AppController {
 			}
 		}
 		if (empty($this->data)) {
-			$this->data = $this->User->find('first', array('conditions' => array('User.id' => $id)));
+			$this->data = $this->User->find('first', array(
+				'conditions' => array('User.id' => $id),
+				'contain' => array('MetaField')
+			));
 		}
 		if (empty($this->data)) {
 			$this->Session->setFlash(__('Invalid User', true), 'flash/error');
 			//$this->redirect(array('action' => 'index'));
-		}
-	}
-
-	function delete($id = null) {
-		if (!empty($this->data['User']['id'])) {
-			if ($this->User->delete($this->data['User']['id'])) {
-				$this->Session->setFlash(__('User deleted', true), 'flash/success');
-				$this->redirect(array('action'=>'index'));
-			}
-			$this->Session->setFlash(__('User was not deleted', true), 'flash/error');
-			$id = $this->data['User']['id'];
-		}
-
-		$this->data = $this->User->find('first', array('conditions' => array('User.id' => $id)));
-		if (!$this->data) {
-			$this->Session->setFlash(__('User unspecified', true), 'flash/error');
-			$this->redirect(array('action' => 'index'));
 		}
 	}
 
