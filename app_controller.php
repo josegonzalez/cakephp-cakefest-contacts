@@ -45,4 +45,9 @@ class AppController extends Controller {
 		'Session',
 		'RequestHandler',
 	);
+	
+	function beforeFlter() {
+		parent::beforeFilter();
+		$this->RequestHandler->setContent('vcf', 'text/x-vcard');
+	}
 }
