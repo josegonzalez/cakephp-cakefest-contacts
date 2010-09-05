@@ -19,6 +19,6 @@ $html->scriptBlock('
 	$("#index").load("'.$this->Html->url(array(
 		'controller' => 'users',
 		'action' => 'index')).'");
-	
+
 	', array('inline' => false));
 ?>

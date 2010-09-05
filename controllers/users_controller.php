@@ -109,6 +109,11 @@ class UsersController extends AppController {
 			$this->Session->setFlash(__('Invalid User', true), 'flash/error');
 			//$this->redirect(array('action' => 'index'));
 		}
+		if ($this->Authsome->get('guest')) $this->render();
+		if ($this->Authsome->get('loginType') == 'credentials' && !$this->RequestHandler->isAjax()) {
+			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'split'));
+		}
+		$this->render();
 	}
 
 }
