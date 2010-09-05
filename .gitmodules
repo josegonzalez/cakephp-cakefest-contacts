@@ -7,3 +7,6 @@
 [submodule "plugins/goodies"]
 	path = plugins/goodies
 	url = git://github.com/predominant/CakePHP-Goodies.git
+[submodule "plugins/vcard"]
+	path = plugins/vcard
+	url = git://github.com/josegonzalez/cakephp_vcard.git
