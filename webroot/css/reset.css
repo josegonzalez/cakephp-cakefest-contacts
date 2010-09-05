@@ -14,36 +14,28 @@ body {
 ul, ol { margin: 10px; }
 blockquote { margin; 10px; }
 
+h1 {
+	color: #DEAF75;
+}
+h2 {
+	color: #81492D;
+}
+h3 {
+	color: #DEAF75;
+}
+h4 {
+	
+}
+
 /** Forms **/
 form {
-	clear: both;
-	margin-right: 20px;
-	padding: 0;
-	width: 95%;
+	margin: 10px 0;
 }
-fieldset {
-	border: 1px solid #ccc;
-	margin-bottom: 1em;
-	padding: 16px 20px;
+form fieldset {
+	margin: 10px;
 }
-fieldset legend {
-	background:#fff;
-	color: #e32;
-	font-size: 160%;
-	font-weight: bold;
-}
-fieldset fieldset {
-	margin-top: 0px;
-	margin-bottom: 20px;
-	padding: 16px 10px;
-}
-fieldset fieldset legend {
-	font-size: 120%;
-	font-weight: normal;
-}
-fieldset fieldset div {
-	clear: left;
-	margin: 0 20px;
+form fieldset legend {
+	margin: 10px;
 }
 form div {
 	clear: both;
@@ -68,16 +60,15 @@ form div.submit {
 	margin-top: 10px;
 }
 label {
+	float: left;
 	display: block;
+	width: 100px;
 	font-size: 110%;
-	margin-bottom:3px;
 }
 input, textarea {
 	clear: both;
-	font-size: 140%;
+	padding: 2px;
 	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
-	padding: 1%;
-	width:98%;
 }
 select {
 	clear: both;
