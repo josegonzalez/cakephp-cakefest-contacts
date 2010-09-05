@@ -49,12 +49,4 @@ foreach ($users as $user) {
 }
 ?>	
 </table>
-<?php
-$html->scriptBlock('
-	$(".accordion .head").click(function() {
-		$(this).children().slideToggle("slow");
-		return false;
-	}).children().hide();
-	', array('inline' => false));
-?>
 </div>

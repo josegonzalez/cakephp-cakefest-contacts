@@ -1,6 +1,15 @@
 /**
  * Snippets of peices that are used and reused throughout the page
  */
+.accordion .head:hover {
+}
+
+.accordion .head:hover:after {
+	content: ' ⇣';
+}
+.accordion .head.expanded:hover:after {
+	content: '';
+}
 /** Notices and Errors **/
 div.message {
 	clear: both;

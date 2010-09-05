@@ -26,6 +26,14 @@ h4 {
 	
 }
 
+a {
+	color: #DEAF75;
+	text-decoration: none;
+}
+a:hover {
+	color: #EA3C27;
+}
+
 /** Forms **/
 form {
 	margin: 10px 0;
