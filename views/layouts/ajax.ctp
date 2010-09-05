@@ -17,4 +17,8 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<?php echo $content_for_layout; ?>
+<?php 
+echo $content_for_layout; 
+echo $this->Js->writeBuffer(); 
+echo $scripts_for_layout;
+?>

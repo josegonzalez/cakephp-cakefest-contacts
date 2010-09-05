@@ -34,7 +34,9 @@ class AppController extends Controller {
 	var $helpers = array(
 		'Goodies.Gravatar',
 		'Session',
-		'Js' => array('Jquery')
+		'Text',
+		'Js' => array('Jquery'),
+		'Vcard.Vcf'
 	);
 
 	var $components = array(
@@ -46,7 +48,7 @@ class AppController extends Controller {
 		'RequestHandler',
 	);
 	
-	function beforeFlter() {
+	function beforeFilter() {
 		parent::beforeFilter();
 		$this->RequestHandler->setContent('vcf', 'text/x-vcard');
 	}
