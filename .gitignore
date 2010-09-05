@@ -1,4 +1,4 @@
 *.kpf
 tmp/
 config/database.php
-
+cake/
