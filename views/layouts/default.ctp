@@ -32,10 +32,13 @@
 			'reset',
 			'layout',
 			'elements',
+			'/js/jquery/prettyPhoto/css/prettyPhoto.minimal',
 		));
 		echo $this->Html->script(array(
-			'http://cdn.jquerytools.org/1.2.4/jquery.tools.min.js',
-			'general'
+			'jquery/jquery-1.4.2.min',
+			'jquery/jquery-ui-1.8.4.custom.min',
+			'jquery/prettyPhoto/jquery.prettyPhoto',
+			'general',
 		));
 
 		echo $scripts_for_layout;
