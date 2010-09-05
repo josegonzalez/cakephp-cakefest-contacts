@@ -9,7 +9,8 @@ loading...
 echo $this->Html->script('jquery/jquery.form.js');
 $html->scriptBlock('
 	$("#edit").load("/profile",function() {
-	$("#edit form").ajaxForm("#edit");
+		$("#edit form").ajaxForm("#edit");
+		$("#index").load("/users");
 	});
 	$("#index").load("/users");
 	
