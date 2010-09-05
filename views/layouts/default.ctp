@@ -34,7 +34,8 @@
 			'elements',
 		));
 		echo $this->Html->script(array(
-			'general',
+			'http://cdn.jquerytools.org/1.2.4/jquery.tools.min.js',
+			'general'
 		));
 
 		echo $scripts_for_layout;
