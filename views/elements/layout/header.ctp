@@ -3,7 +3,7 @@
 	'You\'ve Reached the rejection hotline...',
 	'Two Beers Left',
 	'You\'re not using your boobs correctly',
-	'You put the lime in the coconut and shake it all up',
+	'Put de lime in de coconut, and drink \'em both up',
 	'You\'re code SUCKS!',
 	'Shifting paradigms...',
 	'There\'s one beer left!',
