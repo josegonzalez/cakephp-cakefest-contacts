@@ -3,13 +3,15 @@
 
 foreach ($users as $user) {
 	echo '<div class="user">';
-	debug($user);
 	echo $this->Html->div('head', "{$user['User']['name']} {$user['User']['email']}");
 	echo '<div class="body">';
+		debug($user);
 		foreach ($user['User'] as $key => $val) {
+			echo "<dl>";
 			if (!in_array($key,array('id','password','name','email'))) {
-				echo $this->Html->div('', "{$key}: {$val}");
+				echo "<dt>{$key}</dt><dd>: {$val}</dd>";
 			}
+			echo "</dl>";
 		}
 		echo $this->Html->link("vcs",array(
 			'action' => 'vcs',

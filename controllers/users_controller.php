@@ -34,7 +34,7 @@ class UsersController extends AppController {
 	}
 
 	function index() {
-		$users = $this->User->find('all');
+		$users = $this->User->find('all',array('contain' => array('MetaField')));
 		$this->set(compact('users'));
 	}
 
