@@ -33,10 +33,6 @@ class UsersController extends AppController {
 		$this->redirect(array('action' => 'login'));
 	}
 
-	function profile() {
-		$this->data = $this->User->find('first', array('conditions' => array('User.id' => Authsome::get('id'))));
-	}
-
 	function index() {
 		$users = $this->paginate();
 		$this->set(compact('users'));
