@@ -61,7 +61,9 @@ form div.submit {
 label {
 	float: left;
 	display: block;
-	width: 100px;
+	width: 160px;
+	text-align: right;
+	margin-right: 10px;
 	font-size: 110%;
 }
 input, textarea {
@@ -102,6 +104,10 @@ input[type=submit] {
 	display: inline;
 	font-size: 110%;
 	width: auto;
+	padding: 2px 20px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 form .submit input[type=submit] {
 	background:#62af56;
@@ -110,6 +116,10 @@ form .submit input[type=submit] {
 	border-color: #2d6324;
 	color: #000;
 	text-shadow: #8cee7c 0px 1px 0px;
+	padding: 2px 20px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 form .submit input[type=submit]:hover {
 	background:#4ca83d;
