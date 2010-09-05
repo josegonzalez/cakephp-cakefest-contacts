@@ -38,8 +38,8 @@ foreach ($users as $user) {
 		<td><?php echo $this->Text->autoLink($user['User']['email']); ?></td>
 		<td>
 			<?php
-			echo $this->Html->link("vcs",array(
-				'action' => 'vcs',
+			echo $this->Html->link("vcf",array(
+				'action' => 'vcf',
 				$user['User']['id']
 				));
 			?>
