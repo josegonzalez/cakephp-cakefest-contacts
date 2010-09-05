@@ -34,7 +34,7 @@ class UsersController extends AppController {
 	}
 
 	function profile() {
-		$this->data = $this->User->find('profile');
+		$this->data = $this->User->find('first', array('conditions' => array('User.id' => Authsome::get('id'))));
 	}
 
 	function index() {
@@ -44,7 +44,7 @@ class UsersController extends AppController {
 
 	function view($id = null) {
 		$id = (!$id && !empty($this->params['named']['id'])) ? $this->params['named']['id'] : $id;
-		$user = $this->User->find('view', $id);
+		$user = $this->User->find('first', array('conditions' => array('User.id' => $id)));
 
 		if (!$user) {
 			$this->Session->setFlash(__('Invalid User', true), 'flash/error');
@@ -79,7 +79,7 @@ class UsersController extends AppController {
 			}
 		}
 		if (empty($this->data)) {
-			$this->data = $this->User->find('edit', $id);
+			$this->data = $this->User->find('first', array('conditions' => array('User.id' => $id)));
 		}
 		if (empty($this->data)) {
 			$this->Session->setFlash(__('Invalid User', true), 'flash/error');
@@ -97,7 +97,7 @@ class UsersController extends AppController {
 			$id = $this->data['User']['id'];
 		}
 
-		$this->data = $this->User->find('delete', $id);
+		$this->data = $this->User->find('first', array('conditions' => array('User.id' => $id)));
 		if (!$this->data) {
 			$this->Session->setFlash(__('User unspecified', true), 'flash/error');
 			$this->redirect(array('action' => 'index'));
