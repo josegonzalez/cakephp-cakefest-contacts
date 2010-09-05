@@ -1,6 +1,6 @@
 <h3>Login to share your contact information with others at the cakefest, and get their contact information.</h3>
 <?php
-echo $this->Form->create('User',array('action'=>'edit'));
+echo $this->Form->create('User',array('action'=>'edit', 'onsubmit'=>'alert($(this).serialize());'));
 echo $this->Form->hidden('id');
 echo $this->Form->input('name');
 echo $this->Form->input('email');
