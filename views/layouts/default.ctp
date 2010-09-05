@@ -53,9 +53,9 @@
 			<?php echo $content_for_layout; ?>
 
 		</div>
-	</div>
-	<div id="footer">
-		<?php echo $this->element('layout/footer')?>
+		<div id="footer">
+			<?php echo $this->element('layout/footer')?>
+		</div>		
 	</div>
 	<?php echo $this->Js->writeBuffer()?>
 </body>
