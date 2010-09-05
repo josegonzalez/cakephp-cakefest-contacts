@@ -8,10 +8,10 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('form input').focus(function(){
-		$(this).closest('div').stop().animateClass('active', 800);
+	$('form div.input input').focus(function(){
+		$(this).closest('div').stop().addClass('active');
 	}).blur(function(){
-		$(this).closest('div').stop().removeClass('active', 800);
+		$(this).closest('div').stop().removeClass('active');
 	});
 	
 	$("div.meta").each(function(i,div) {

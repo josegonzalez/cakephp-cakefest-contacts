@@ -44,6 +44,14 @@ form div {
 }
 form .input {
 	color: #fff;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	width: auto;
+}
+form .active {
+	background: #DA9A5B;
+	width: auto;
 }
 form .required {
 	font-weight: bold;
