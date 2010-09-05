@@ -3,6 +3,7 @@
 
 foreach ($users as $user) {
 	echo '<div class="user">';
+	debug($user);
 	echo $this->Html->div('head', "{$user['User']['name']} {$user['User']['email']}");
 	echo '<div class="body">';
 		foreach ($user['User'] as $key => $val) {
