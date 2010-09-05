@@ -39,7 +39,6 @@ class UsersController extends AppController {
 	}
 
 	function view($id = null) {
-
 		$id = (!$id && !empty($this->params['named']['id'])) ? $this->params['named']['id'] : $id;
 		$user = $this->_user = $this->User->find('first', array(
 			'conditions' => array('User.id' => $id),
