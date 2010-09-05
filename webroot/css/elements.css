@@ -1,6 +1,13 @@
 /**
  * Snippets of peices that are used and reused throughout the page
  */
+/** Form inputs for active inputs **/
+form .active {
+	background: #DA9A5B;
+	border-radius: 7px;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
 /** Notices and Errors **/
 div.message {
 	clear: both;

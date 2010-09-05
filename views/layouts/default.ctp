@@ -37,6 +37,7 @@
 		echo $this->Html->script(array(
 			'jquery/jquery-1.4.2.min',
 			'jquery/jquery-ui-1.8.4.custom.min',
+			'jquery/animateClass.compressed',
 			'jquery/prettyPhoto/jquery.prettyPhoto',
 			'general',
 		));
