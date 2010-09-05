@@ -40,8 +40,6 @@
 			'jquery/prettyPhoto/jquery.prettyPhoto',
 			'general',
 		));
-
-		echo $scripts_for_layout;
 	?>
 </head>
 <body>
@@ -60,6 +58,9 @@
 			<?php echo $this->element('layout/footer')?>
 		</div>		
 	</div>
-	<?php echo $this->Js->writeBuffer()?>
+	<?php 
+	echo $this->Js->writeBuffer(); 
+	echo $scripts_for_layout;
+	?>
 </body>
 </html>

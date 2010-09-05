@@ -5,9 +5,15 @@ class User extends AppModel {
 	var $actsAs = array('Expandable');
 	var $hasMany = array('LoginToken');
 	var $validate = array(
-		'username' => array(
+		'email' => array(
 			'email' => array(
 				'rule' => array('email'),
+			),
+			'required' => array(
+				'rule' => array('required'),
+			),
+			'isUnique' => array(
+				'rule' => array('isUnique'),
 			),
 			'notempty' => array(
 				'rule' => array('notempty'),

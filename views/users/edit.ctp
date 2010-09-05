@@ -21,10 +21,12 @@ for ($i=0;$i<30;$i++) {
 $html->scriptBlock('
 	$("div.meta").each(function(i,div) {
 		$(div).find("input").bind("change",function(e) {
-			if ($(this).parents("div").find("input:first").val()=="") {
-				$(this).parents("div").hide();
+			if ($(this).parent().find("input:first").val()=="" && 
+				$(this).parent().prev().find("input:first").val()=="") {
+				$(this).parent().hide();
 			} else {
-				$(this).parents("div").hide();
+				$(this).parent().show();
+				$(this).parent().next().find("input:first").trigger("change");
 			}
 		});
 		$(div).find("input:first").trigger("change");
