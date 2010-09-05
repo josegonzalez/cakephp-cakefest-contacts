@@ -23,11 +23,6 @@ class User extends AppModel {
 				'allowEmpty' => false
 				),
 		),
-		'password' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-			),
-		),
 	);
 
 	function authsomeLogin($type, $credentials = array()) {
