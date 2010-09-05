@@ -8,11 +8,17 @@ loading...
 <?php
 echo $this->Html->script('jquery/jquery.form.js');
 $html->scriptBlock('
-	$("#edit").load("/profile",function() {
+	$("#edit").load("'.$this->Html->url(array(
+		'controller' => 'users',
+		'action' => 'edit')).'",function() {
 		$("#edit form").ajaxForm("#edit");
-		$("#index").load("/users");
+		$("#index").load("'.$this->Html->url(array(
+		'controller' => 'users',
+		'action' => 'index')).'");
 	});
-	$("#index").load("/users");
+	$("#index").load("'.$this->Html->url(array(
+		'controller' => 'users',
+		'action' => 'index')).'");
 	
 	', array('inline' => false));
 ?>
