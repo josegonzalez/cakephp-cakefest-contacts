@@ -1,28 +1,57 @@
 <div class="users accordion">
+	<table cellpadding="0" cellspacing="0">
+	<tr>
+			<th width="50%">Name</th>
+			<th width="35%">Email Address</th>
+			<th width="15%">Vcard</th>
+	</tr>
 <?php
-
+$i = 0;
 foreach ($users as $user) {
-	echo '<div class="user">';
-	echo $this->Html->div('head', "{$user['User']['name']} {$user['User']['email']}");
-	echo '<div class="body">';
-		echo "<dl>";
-		foreach ($user['User'] as $key => $val) {
-			if (!in_array($key,array('id','password','name','email'))) {
-				echo "<dt>{$key}</dt><dd>: {$val}</dd>";
-			}
-		}
-		echo "</dl>";
-		echo $this->Html->link("vcs",array(
-			'action' => 'vcs',
-			$user['User']['id']
-			));
-	echo '</div>';
+	$class = null;
+	if ($i++ % 2 == 0) {
+		$class = ' class="altrow"';
+	}
+?>
+	<tr<?php echo $class;?>>
+		<td class="head">
+			<?php echo $user['User']['name']; ?>
+			<div class="user_metadata">
+				<div class="gravatar_image"><?php echo $gravatar->image($user['User']['email']); ?></div>
+				<dl>
+					<?php 
+						foreach ($user['User'] as $key => $val) {
+							if (!in_array($key,array('id','password','name','email','created','modified','username'))) {
+								if ($key == 'twitter') {
+									echo "<dt>{$key}:</dt><dd>".$this->Html->link('@'.$val, 'http://twitter.com/'.$val)."</dd>";	
+								} else {
+									echo "<dt>{$key}:</dt><dd>{$val}</dd>";
+								}
+							}
+						}
+					?>
+				</dl>
+			</div>
+		</td>
+		<td><a href="mailto:<?php echo $user['User']['email']; ?>"><?php echo $user['User']['email']; ?></a></td>
+		<td>
+			<?php
+			echo $this->Html->link("vcs",array(
+				'action' => 'vcs',
+				$user['User']['id']
+				));
+			?>
+		</td>
+<?php
 }
+?>	
+</table>
+<?php
 $html->scriptBlock('
 	$(".accordion .head").click(function() {
-		$(this).next().toggle("slow");
+		$(this).children().slideToggle("slow");
 		return false;
-	}).next().hide();
+	}).children().hide();
 	', array('inline' => false));
 ?>
 </div>

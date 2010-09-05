@@ -32,6 +32,31 @@
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 }
+td div.user_metadata {
+	clear: left;
+}
+td div.gravatar_image {
+	margin-top: 5px;
+}
+td div.gravatar_image img {
+	clear: left;
+	float: left;
+	margin: 0 5px 5px 5px;
+}
+dl {
+	margin: 0 0 5px 95px; 
+}
+dd, dt {
+	width: 35%;
+	float: left;
+	margin-bottom: 5px;
+}
+dt {
+	font-weight: bold;
+}
+td.head {
+	cursor: pointer;
+}
 /*** FOOTER ***/
 #footer {
 	margin-top: 10px;
