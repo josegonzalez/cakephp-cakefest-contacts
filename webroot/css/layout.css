@@ -8,17 +8,15 @@
 }
 /*** HEADER ***/
 #header {
-	left:0;
-	right:0;
-	top:0;
 	margin-bottom: 10px;
+	overflow: hidden;
 }
 #header h1 {
 	float: left;
-	margin-right: 10px;
+	margin: 20px 0;
 }
 #header img {
-	
+	float: right;
 }
 /*** CONTENT ***/
 #content {
