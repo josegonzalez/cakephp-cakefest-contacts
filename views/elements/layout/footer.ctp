@@ -1,1 +1,0 @@
-<?php echo $this->Html->image('layout/logo.png', array('alt'=>'CakeFest 2010')); ?>
