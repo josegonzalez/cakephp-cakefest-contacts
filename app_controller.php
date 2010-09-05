@@ -32,7 +32,7 @@
  */
 class AppController extends Controller {
 	var $helpers = array(
-		'Goodies.Gravatar'
+		'Goodies.Gravatar',
 		'Session',
 		'Js' => array('Jquery')
 	);
