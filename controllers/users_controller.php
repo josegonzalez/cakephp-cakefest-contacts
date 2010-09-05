@@ -86,9 +86,11 @@ class UsersController extends AppController {
 
 			unset($this->data['MetaField']);
 			unset($this->data['User']['password_confirm']);
+			if (!empty($this->data['User']['password'])) {
+				$this->data['User']['password'] = Authsome::hash($this->data['User']['password']);
+			}
 			if (!Authsome::get('id') && isset($this->data['User']['id'])) unset($this->data['User']['id']);
 			$this->data['User']['email'] = Authsome::get('email');
-			$this->data['User']['password'] = Authsome::hash($this->data['User']['password']);
 			if ($this->User->save($this->data, array('callback' => 'edit'))) {
 				$user = $this->User->find('first', array(
 					'conditions' => array('User.id' => $this->User->id),
