@@ -6,8 +6,13 @@ loading...
 </div>
 <div style="clear:both;"><!--e--></div>
 <?php
+echo $this->Html->script('jquery/jquery.form.js');
 $html->scriptBlock('
-	$("#edit").load("/profile");
+	$("#edit").load("/profile",function() {
+		$("#edit form").ajaxForm("#edit");
+		$("#index").load("/users");
+	});
 	$("#index").load("/users");
+	
 	', array('inline' => false));
 ?>

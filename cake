@@ -1,1 +1,1 @@
-/var/cakephp-1.3.3/cake
+/var/cakephp/cake

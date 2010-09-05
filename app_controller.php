@@ -35,7 +35,8 @@ class AppController extends Controller {
 		'Goodies.Gravatar',
 		'Session',
 		'Text',
-		'Js' => array('Jquery')
+		'Js' => array('Jquery'),
+		'Vcard.Vcf'
 	);
 
 	var $components = array(
