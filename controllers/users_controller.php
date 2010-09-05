@@ -38,7 +38,7 @@ class UsersController extends AppController {
 	}
 
 	function index() {
-		$users = $this->paginate();
+		$users = $this->User->find('all');
 		$this->set(compact('users'));
 	}
 
