@@ -32,8 +32,10 @@
  */
 class AppController extends Controller {
 	var $helpers = array(
+		'Goodies.Gravatar',
 		'Session',
-		'Js' => array('Jquery'));
+		'Js' => array('Jquery')
+	);
 
 	var $components = array(
 		'DebugKit.Toolbar',
