@@ -6,18 +6,22 @@ class User extends AppModel {
 	var $hasMany = array('LoginToken');
 	var $validate = array(
 		'email' => array(
-			'email' => array(
-				'rule' => array('email'),
-			),
-			'required' => array(
-				'rule' => array('required'),
-			),
-			'isUnique' => array(
-				'rule' => array('isUnique'),
-			),
-			'notempty' => array(
-				'rule' => array('notempty'),
-			),
+			'rule1' => array(
+				'rule' => 'isUnique',
+				'required' => true,
+				'allowEmpty' => false,
+				'last' => true
+				), 
+			'rule2' => array(
+				'rule' => 'email',
+				'required' => true,
+				'allowEmpty' => false
+				),
+			'rule1' => array(
+				'rule' => 'notEmpty',
+				'required' => true,
+				'allowEmpty' => false
+				),
 		),
 		'password' => array(
 			'notempty' => array(

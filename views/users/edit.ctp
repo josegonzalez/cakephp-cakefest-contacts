@@ -2,6 +2,7 @@
 <?php
 echo $this->Form->create('User',array('action'=>'edit'));
 echo $this->Form->hidden('id');
+echo $this->Form->input('name');
 echo $this->Form->input('email');
 echo $this->Form->input('password',array('type'=>'password'));
 echo $this->Form->input('password_confirm',array('type'=>'password'));
@@ -33,5 +34,4 @@ $html->scriptBlock('
 	});
 	', array('inline' => false));
 echo $this->Form->end('Save');
-debug($this->data);
 ?>
