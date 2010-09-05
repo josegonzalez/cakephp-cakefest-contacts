@@ -48,9 +48,6 @@ class ExpandableBehavior extends ModelBehavior{
 			foreach ($item[$with] as $field) {
 				$results[$i][$model->alias][$field['key']] = $field['value'];
 			}
-			foreach($item['Asset'] as $field) {
-				$results[$i][$model->alias][strtolower($field['title'])] = $field['filename'];
-			}
 		}
 		return $results;
 	}

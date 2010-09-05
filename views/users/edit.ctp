@@ -1,13 +1,12 @@
 <p>Login to share your contact information with others at the cakefest, and get their contact information.</p>
 <?php
-debug($this->data);
-echo $this->Form->create('User',array('action'=>'login'));
+echo $this->Form->create('User',array('action'=>'edit'));
+echo $this->Form->hidden('id');
 echo $this->Form->input('email');
 echo $this->Form->input('password',array('type'=>'password'));
 echo $this->Form->input('password_confirm',array('type'=>'password'));
-
-foreach (array_diff_key($this->data['User'],array(
-	'id', 'email', 'password',
+foreach (array_diff_key((array)$this->data['User'],array(
+	'id' => 0, 'email' => 0, 'password' => 0, 'username' => 0,
 	)) + array(
 	'phone' => '', 'skype' => '', 
 	) as $field => $value) {
@@ -31,6 +30,6 @@ $html->scriptBlock('
 		$(div).find("input:first").trigger("change");
 	});
 	', array('inline' => false));
-
 echo $this->Form->end('Save');
+debug($this->data);
 ?>
