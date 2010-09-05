@@ -25,7 +25,7 @@ foreach ($users as $user) {
 								if ($key == 'twitter') {
 									echo "<dt>{$key}:</dt><dd>".$this->Html->link('@'.$val, 'http://twitter.com/'.$val)."</dd>";	
 								} else {
-									echo "<dt>{$key}:</dt><dd>{$val}</dd>";
+									echo "<dt>{$key}:</dt><dd>".$this->Text->autoLink($val)."</dd>";
 								}
 							}
 						}
@@ -33,7 +33,7 @@ foreach ($users as $user) {
 				</dl>
 			</div>
 		</td>
-		<td><a href="mailto:<?php echo $user['User']['email']; ?>"><?php echo $user['User']['email']; ?></a></td>
+		<td><?php echo $this->Text->autoLink($user['User']['email']); ?></td>
 		<td>
 			<?php
 			echo $this->Html->link("vcs",array(

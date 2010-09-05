@@ -34,6 +34,7 @@ class AppController extends Controller {
 	var $helpers = array(
 		'Goodies.Gravatar',
 		'Session',
+		'Text',
 		'Js' => array('Jquery')
 	);
 
