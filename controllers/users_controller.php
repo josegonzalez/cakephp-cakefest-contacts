@@ -44,13 +44,12 @@ class UsersController extends AppController {
 			'conditions' => array('User.id' => $id),
 			'contain' => array('MetaField')
 		));
-/*
 		if (!$user) {
 			$this->Session->setFlash(__('Invalid User', true), 'flash/error');
 			$this->redirect(array('action' => 'index'));
 		}
-		*/
-		$this->set(compact('user'));
+		$filename = $user['User']['name'];
+		$this->set(compact('user','filename'));
 	}
 	function vcf($id = null) {
 		$this->helpers[] = 'vcf';

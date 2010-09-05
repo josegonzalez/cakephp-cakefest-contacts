@@ -39,8 +39,9 @@ foreach ($users as $user) {
 		<td>
 			<?php
 			echo $this->Html->link("vcf",array(
-				'action' => 'vcf',
-				$user['User']['id']
+				'action' => 'view',
+				$user['User']['id'],
+				'ext' => 'vcf'
 				));
 			?>
 		</td>
