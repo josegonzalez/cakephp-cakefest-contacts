@@ -39,18 +39,18 @@ class UsersController extends AppController {
 	}
 
 	function view($id = null) {
+
 		$id = (!$id && !empty($this->params['named']['id'])) ? $this->params['named']['id'] : $id;
 		$user = $this->_user = $this->User->find('first', array(
 			'conditions' => array('User.id' => $id),
 			'contain' => array('MetaField')
 		));
-/*
 		if (!$user) {
 			$this->Session->setFlash(__('Invalid User', true), 'flash/error');
 			$this->redirect(array('action' => 'index'));
 		}
-		*/
-		$this->set(compact('user'));
+		$filename = $user['User']['name'];
+		$this->set(compact('user','filename'));
 	}
 	function vcf($id = null) {
 		$this->helpers[] = 'vcf';

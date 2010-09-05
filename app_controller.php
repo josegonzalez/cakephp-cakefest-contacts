@@ -50,6 +50,7 @@ class AppController extends Controller {
 	
 	function beforeFlter() {
 		parent::beforeFilter();
+		$this->helpers[] = 'vcf';
 		$this->RequestHandler->setContent('vcf', 'text/x-vcard');
 	}
 }
