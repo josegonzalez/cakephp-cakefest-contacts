@@ -4,7 +4,7 @@
 #
 # Host: localhost (MySQL 5.1.49)
 # Database: cakefest_contacts
-# Generation Time: 2010-09-05 03:08:13 -0500
+# Generation Time: 2010-09-05 03:47:53 -0500
 # ************************************************************
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -33,7 +33,7 @@ CREATE TABLE `login_tokens` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `token` (`token`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -43,7 +43,7 @@ CREATE TABLE `login_tokens` (
 DROP TABLE IF EXISTS `meta_fields`;
 
 CREATE TABLE `meta_fields` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` varchar(36) COLLATE utf8_bin NOT NULL,
   `model_id` varchar(36) COLLATE utf8_bin DEFAULT NULL,
   `model` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `key` varchar(255) COLLATE utf8_bin DEFAULT NULL,
@@ -60,7 +60,7 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` varchar(36) COLLATE utf8_unicode_ci NOT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
