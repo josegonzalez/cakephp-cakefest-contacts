@@ -2,10 +2,16 @@
  * Styles for general html elements
  */
 * { margin: 0; padding: 0; }
+html {
+	height: 100%;
+}
 body {
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
 	background: url(../img/layout/Wood_tile_wallpaper_by_neko_xexe.png);
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
 }
 ul, ol { margin: 10px; }
 blockquote { margin; 10px; }

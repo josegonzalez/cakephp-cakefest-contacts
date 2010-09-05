@@ -1,4 +1,1 @@
-<ul>
-	<li><?php echo $this->Html->image('image.ext', array('alt'=>'altText')); ?></li>
-	<li><?php echo $this->Html->image('image.ext', array('alt'=>'altText')); ?></li>
-</ul>
+<?php echo $this->Html->image('layout/logo.png', array('alt'=>'CakeFest 2010')); ?>
