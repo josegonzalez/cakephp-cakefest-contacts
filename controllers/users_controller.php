@@ -82,6 +82,7 @@ class UsersController extends AppController {
 				}
 			}
 			unset($this->data['MetaField']);
+			unset($this->data['User']['password_confirm']);
 			if ($this->User->save($this->data, array('callback' => 'edit'))) {
 				$user = $this->User->find('first', array('conditions' => array('User.id' => $this->User->id)));
 				$user['User']['loginType'] = 'credentials';
