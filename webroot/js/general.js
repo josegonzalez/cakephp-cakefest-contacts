@@ -9,9 +9,9 @@ $(document).ready(function(){
 	});
 	
 	$('form input').focus(function(){
-		$(this).closest('div').stop().animate({ backgroundColor: "#a7bf51"}, 800);
+		$(this).closest('div').stop().animateClass('active', 800);
 	}).blur(function(){
-		$(this).closest('div').stop().animate({ backgroundColor: "#ffffff"}, 800);
+		$(this).closest('div').stop().removeClass('active', 800);
 	});
 	
 	$("div.meta").each(function(i,div) {
