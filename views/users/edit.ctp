@@ -9,15 +9,14 @@ echo $this->Form->input('password_confirm',array('type'=>'password'));
 foreach (array_diff_key((array)$this->data['User'],array(
 	'id' => 0, 'email' => 0, 'password' => 0, 'username' => 0,
 	)) + array(
-	'phone' => '', 'skype' => '', 
+	'phone' => '', 'twitter' => '', 
 	) as $field => $value) {
-	echo $this->element('self_field',array(
-		'field' => $field,
-		'value' => $value,
-		));
-}
-for ($i=0;$i<30;$i++) {
-	echo $this->element('self_field',array());
+	if (!in_array($field,array('created','modified'))) {
+		echo $this->element('self_field',array(
+			'field' => $field,
+			'value' => $value,
+			));
+	}
 }
 $html->scriptBlock('
 	$("div.meta").each(function(i,div) {
