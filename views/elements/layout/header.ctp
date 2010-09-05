@@ -15,6 +15,7 @@
 	'What happens at CakeFest... STAYS at CakeFest',
 	'Angry Jose and Nice Jose',
 	'Unless it\'s a video of Gabriel dancing...',
+	'C.P.S.R.',
 );
 $title = $titles[rand(0, count($titles)-1)]; ?>
 <?php echo $this->Html->image('layout/logo_header.png', array('alt'=>'CakeFest 2010')); ?>
