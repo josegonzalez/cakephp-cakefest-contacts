@@ -4,12 +4,14 @@
 /*** CONTAINER ***/
 #container {
 	width: 955px;
-	min-height: 100%;
 	margin: 0 auto;
 }
 /*** HEADER ***/
 #header {
-	height: 100px;
+	left:0;
+	right:0;
+	top:0;
+	margin-bottom: 10px;
 }
 /*** CONTENT ***/
 #content {
@@ -26,8 +28,5 @@
 }
 /*** FOOTER ***/
 #footer {
-	position: relative;
-	z-index: 10;
-	height: 75px;
-	margin-top: -75px;
+
 }
