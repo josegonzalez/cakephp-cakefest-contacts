@@ -22,10 +22,12 @@ foreach ($users as $user) {
 					<?php 
 						foreach ($user['User'] as $key => $val) {
 							if (!in_array($key,array('id','password','name','email','created','modified','username'))) {
-								if ($key == 'twitter') {
-									echo "<dt>{$key}:</dt><dd>".$this->Html->link('@'.$val, 'http://twitter.com/'.$val)."</dd>";	
-								} else {
-									echo "<dt>{$key}:</dt><dd>".$this->Text->autoLink($val)."</dd>";
+								if ($val) {
+									if ($key == 'twitter') {
+										echo "<dt>{$key}:</dt><dd>".$this->Html->link('@'.$val, 'http://twitter.com/'.$val)."</dd>";	
+									} else {
+										echo "<dt>{$key}:</dt><dd>".$this->Text->autoLink($val)."</dd>";
+									}
 								}
 							}
 						}

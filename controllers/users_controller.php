@@ -73,7 +73,7 @@ class UsersController extends AppController {
 		if (!empty($this->data) && $this->data['User']['password']==$this->data['User']['password_confirm']) {
 			// cleanup the crazy data structure which gets us the key/value pairs as both editable
 			foreach ($this->data['MetaField'] as $i => $node) {
-				if (!empty($node['field'])) {
+				if (!empty($node['field']) && !empty($node['value'])) {
 					$this->data['User'][($node['field'])] = trim($node['value']);
 				}
 			}
