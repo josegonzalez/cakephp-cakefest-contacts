@@ -1,6 +1,10 @@
 /**
  * Snippets of peices that are used and reused throughout the page
  */
+/** Form inputs for active inputs **/
+form .active {
+	background: #DA9A5B;
+}
 /** Notices and Errors **/
 div.message {
 	clear: both;

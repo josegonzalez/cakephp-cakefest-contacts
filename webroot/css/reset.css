@@ -7,7 +7,7 @@ html {
 body {
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
-	background: url(../img/layout/Wood_tile_wallpaper_by_neko_xexe.png);
+	background: url(../img/layout/wallpaper.jpg);
 }
 ul, ol { margin: 10px; }
 blockquote { margin; 10px; }
@@ -20,6 +20,7 @@ h2 {
 }
 h3 {
 	color: #81492D;
+	text-align: center;
 }
 h4 {
 	
@@ -42,7 +43,7 @@ form div {
 	vertical-align: text-top;
 }
 form .input {
-	color: #444;
+	color: #fff;
 }
 form .required {
 	font-weight: bold;
@@ -58,6 +59,7 @@ form div.submit {
 	margin-top: 10px;
 }
 label {
+	color: #000;
 	float: left;
 	display: block;
 	width: 160px;
@@ -69,6 +71,7 @@ input, textarea {
 	clear: both;
 	padding: 2px;
 	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
+	margin-right: 10px;
 }
 select {
 	clear: both;
