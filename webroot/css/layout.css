@@ -5,9 +5,7 @@
 #container {
 	width: 955px;
 	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	margin: 0 auto -75px auto;
+	margin: 0 auto;
 }
 /*** HEADER ***/
 #header {
@@ -15,6 +13,8 @@
 }
 /*** CONTENT ***/
 #content {
+	position: relative;
+	z-index: 20;
 	background: #fff;
 	box-shadow: 0 1px 5px #000;
 	-webkit-box-shadow: 0 1px 5px #000;
@@ -26,8 +26,8 @@
 }
 /*** FOOTER ***/
 #footer {
+	position: relative;
+	z-index: 10;
 	height: 75px;
-}
-#footer ul li {
-	display: inline;
+	margin-top: -75px;
 }

@@ -9,8 +9,6 @@ body {
 	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
 	background: url(../img/layout/Wood_tile_wallpaper_by_neko_xexe.png);
-	min-height: 100%;
-	height: auto !important;
 	height: 100%;
 }
 ul, ol { margin: 10px; }
