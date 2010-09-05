@@ -20,9 +20,9 @@ class UsersController extends AppController {
 		if ($user) {
 			$this->Session->setFlash(__('You have been logged in', true), 'flash/success');
 			if (!empty($user['User']['id'])) {
-				$this->redirect('/users/edit/'.$user['User']['id']);
+				$this->redirect(array('action' => 'edit', $user['User']['id']));
 			} else {
-				$this->redirect('/users/add');
+				$this->redirect(array('action' => 'add'));
 			}
 		}
 	}
