@@ -1,10 +1,7 @@
-<h2>Put de lime in de coconut, and drink 'em both up</h2>
-
-<p>Login to share your contact information with others at the CakeFest, and get their contact information.</p>
+<h3>Login / Register to share your info with other CakeFest attendees!</h3>
 <?php
 echo $this->Form->create('User',array('action'=>'login'));
 echo $this->Form->input('email');
-echo $this->Form->input('password',array('type'=>'password'));
+echo $this->Form->input('password',array('type'=>'password', 'after' => 'Hint: What was the James hotel wifi password?'));
 echo $this->Form->end('Login');
 ?>
-<p style="font-style:italic;color:grey;">(* use the password for the hotel wifi)</p>
