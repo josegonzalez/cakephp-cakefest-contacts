@@ -1,10 +1,10 @@
 <?php
-/* User Fixture generated on: 2010-09-05 00:09:33 : 1283665713 */
+/* User Fixture generated on: 2010-09-05 02:09:04 : 1283667664 */
 class UserFixture extends CakeTestFixture {
 	var $name = 'User';
 
 	var $fields = array(
-		'id' => array('type' => 'string', 'null' => false, 'length' => 36, 'key' => 'primary'),
+		'id' => array('type' => 'string', 'null' => false, 'default' => NULL, 'length' => 36, 'key' => 'primary'),
 		'username' => array('type' => 'string', 'null' => true, 'default' => NULL),
 		'password' => array('type' => 'string', 'null' => true, 'default' => NULL),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => NULL),
@@ -15,11 +15,11 @@ class UserFixture extends CakeTestFixture {
 
 	var $records = array(
 		array(
-			'id' => '4c832f31-5a74-4c2f-833c-07c1410437e9',
+			'id' => '4c8336d0-1388-4be0-abb8-15fe410437e9',
 			'username' => 'Lorem ipsum dolor sit amet',
 			'password' => 'Lorem ipsum dolor sit amet',
-			'created' => '2010-09-05 00:48:33',
-			'modified' => '2010-09-05 00:48:33'
+			'created' => '2010-09-05 02:21:04',
+			'modified' => '2010-09-05 02:21:04'
 		),
 	);
 }
