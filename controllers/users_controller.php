@@ -3,6 +3,19 @@ class UsersController extends AppController {
 	var $name = 'Users';
 	var $components = array('Mail');
 	var $paginate = array('contain' => false);
+	var $allowedActions = array('login', 'logout', 'add');
+
+	function beforeFilter() {
+		parent::beforeFilter();
+		$loginType = Authsome::get('loginType');
+		if (!$loginType && !in_array($this->params['action'], $allowedActions)) {
+			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
+		}
+
+		if ($loginType || !in_array($loginType, array('credentials', 'cookie'))) {
+			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
+		}
+	}
 
 	function login() {
 		if (empty($this->data)) {
