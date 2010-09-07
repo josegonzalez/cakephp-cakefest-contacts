@@ -51,6 +51,7 @@ class UsersController extends AppController {
 		$filename = $user['User']['name'];
 		$this->set(compact('user','filename'));
 	}
+	
 	function vcf($id = null) {
 		$this->helpers[] = 'vcf';
 		$this->view($id);

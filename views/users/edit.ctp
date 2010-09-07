@@ -11,7 +11,7 @@ foreach (array_diff_key((array)$this->data['User'],array(
 	)) + array(
 	'phone' => '', 'twitter' => '', 'aim' => '',  'yim' => '',  'gtalk' => '', 'skype' => '',
 	) as $field => $value) {
-	if (!in_array($field,array('created','modified'))) {
+	if (!in_array($field,array('created','modified','name'))) {
 		echo $this->element('self_field',array(
 			'field' => $field,
 			'value' => $value,
