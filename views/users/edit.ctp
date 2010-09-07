@@ -1,4 +1,4 @@
-<h3>Login to share your contact information with others at the cakefest, and get their contact information.</h3>
+<h3>Fill in your contact information and share it with others from CakeFest</h3>
 <?php
 echo $this->Form->create('User',array('action'=>'edit'));
 echo $this->Form->hidden('id');

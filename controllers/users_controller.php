@@ -5,16 +5,15 @@ class UsersController extends AppController {
 	var $paginate = array('contain' => false);
 	var $allowedActions = array('login', 'logout', 'add');
 
-	function beforeFilter() {
-		parent::beforeFilter();
+	function afterFilter() {
+		parent::afterFilter();
 		$loginType = Authsome::get('loginType');
 		if (!$loginType && !in_array($this->params['action'], $allowedActions)) {
 			$this->Session->setFlash(__("I know you're drunk, but at least log in", true), 'flash/error');
 			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
 		}
-
-		if ($loginType || !in_array($loginType, array('credentials', 'cookie'))) {
-			$this->Session->setFlash(__("You are logged in, but somehow you aren't cookied or credentialed.", true), 'flash/error');
+		if ($loginType && !in_array($loginType, array('credentials', 'cookie', 'fake'))) {
+			$this->Session->setFlash(__("You are logged in, but somehow you aren't cookied or credentialed properly.", true), 'flash/error');
 			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
 		}
 	}
