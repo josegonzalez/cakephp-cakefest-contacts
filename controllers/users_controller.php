@@ -9,10 +9,12 @@ class UsersController extends AppController {
 		parent::beforeFilter();
 		$loginType = Authsome::get('loginType');
 		if (!$loginType && !in_array($this->params['action'], $allowedActions)) {
+			$this->Session->setFlash(__("I know you're drunk, but at least log in", true), 'flash/error');
 			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
 		}
 
 		if ($loginType || !in_array($loginType, array('credentials', 'cookie'))) {
+			$this->Session->setFlash(__("You are logged in, but somehow you aren't cookied or credentialed.", true), 'flash/error');
 			$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
 		}
 	}
